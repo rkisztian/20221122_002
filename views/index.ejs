@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <style>
+      .piros{ color: red;}
+      .zold{ color: green}
+      .kek{ color: blue }
+    </style>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% for( let index = 0; index < data.length; index++ ) { %>
+      <% if (data[index][1]==1) { %>
+        <p>
+          <%= data[index][0] %>: {aktív} 
+          <%if (data[index][2]>0) { %>(<span class="zold"><%= data[index][2] %> Ft.</span>) <% } %>
+          <%if (data[index][2]==0) { %>(<span class="kek"><%= data[index][2] %> Ft.</span>) <% } %>
+          <%if (data[index][2]<0) { %>(<span class="piros"><%= data[index][2] %> Ft.</span>) <% } %>
+        </p>
+      <% } %>
+      
+      <% if (data[index][1]==0) { %>
+        <p><%= data[index][0] %>: {inaktív}
+          <%if (data[index][2]>0) { %>(<span class="zold"><%= data[index][2] %> Ft.</span>) <% } %>
+          <%if (data[index][2]==0) { %>(<span class="kek"><%= data[index][2] %> Ft.</span>) <% } %>
+          <%if (data[index][2]<0) { %>(<span class="piros"><%= data[index][2] %> Ft.</span>) <% } %>
+        </p>
+      <% } %>
+    <% } %>
+  </body>
+</html>
